@@ -1,0 +1,3 @@
+<launch>
+  <node name="grasping" pkg="bin_picking" type="grasping" output="screen" />
+</launch>

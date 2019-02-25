@@ -1,0 +1,5 @@
+# Get Depth Image
+
+---
+
+sensor_msgs/Image depth_image

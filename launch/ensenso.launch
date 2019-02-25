@@ -1,0 +1,10 @@
+<launch>
+  <include file="$(find panda_moveit_config)/launch/panda_control_moveit_rviz.launch">
+    <arg name="robot_ip" value="172.16.0.2" />
+    <arg name="load_gripper" value="false" />
+
+    <arg name="launch_rviz" value="false" />
+  </include>
+
+  <node name="ensenso_node" pkg="bin_picking" type="ensenso_node" output="screen" />
+</launch>

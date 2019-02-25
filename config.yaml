@@ -1,0 +1,118 @@
+# URL
+url:
+  database: "http://127.0.0.1:8080/api/"
+  learning: "http://127.0.0.1:3000/api/"
+
+
+# Bin
+bin_data:
+  top_left: [-0.134, -0.085] # [m]
+  bottom_right: [0.147, 0.09] # [m]
+  height: 159
+
+
+# Ensenso
+ensenso:
+  id: "182472"
+  pixel_size: 2000.0 # [px/m]
+  min_depth: 0.22 # [m]
+  max_depth: 0.41 # [m]
+  use_open_gl: true
+  use_cuda: true
+  cuda_device: 1
+
+
+# Start
+start_bin: "LEFT" # LEFT, RIGHT
+camera: "ENSENSO" # ENSENSO, REALSENSE, BOTH
+mode: "MEASURE" # MEASURE, PERFORM, EVALUATE
+
+grasp_database: "~/Documents/data/cylinder-cube-1/cylinder-cube-1.db"
+grasp_model: "/home/berscheid/Documents/data/cylinder-cube-1/models/model-4" # Suffix for C++: "-sm", model-4, model-4-inpaint, model-5-height
+# grasp_model: "/home/berscheid/Documents/data/small-cubes-2/models/model-2-types" # Suffix for C++: "-sm", model-4, model-4-inpaint, model-5-height
+# grasp_model: "/home/berscheid/Documents/data/screw-2/models/model-1-screw" # Suffix for C++: "-sm", model-4, model-4-inpaint, model-5-height
+# grasp_model: "/home/berscheid/Documents/data/cube-1/models/ann-model-2" # For specific grasps
+# grasp_model: "/home/berscheid/Documents/data/cylinder-1/models/model-specific-3"
+
+push_database: "~/Documents/data/pushing/cylinder-cube-1.db"
+push_model: "/home/berscheid/Documents/data/pushing/models/model-1" # Suffix for C++: "-sm"
+
+
+# Epochs
+epochs:
+  - number_cycles: 3000
+    method_primary: "TOP_5"
+    percentage_secondary: 0.0
+    method_secondary: "RANDOM"
+
+
+# General structure
+use_ensenso_node: true
+use_cpp_inference: true
+change_bins: true
+change_bin_at_max_probability: 0.0 # 5
+wait_for_force: false # Doesn't work currently
+push_objects: true
+random_actions_without_inference: true
+set_zero_reward: false
+home_gripper: true
+
+
+# Images
+take_after_image: true
+take_direct_images: false
+take_side_images: false
+
+
+# Distances
+image_distance_from_pose: 0.350 # [m]
+approach_distance_from_pose: 0.120 # [m]
+lower_random_pose: [-0.07, -0.12, 0.0, -1.4, 0.0, 0.0] # [m, rad]
+upper_random_pose: [0.07, 0.12, 0.0, 1.4, 0.0, 0.0] # [m, rad]
+
+
+# Dynamics and forces
+general_dynamics_rel: 0.32
+approach_dynamics_rel: 0.15
+general_force_condition_threshold: 75.0 # [a.u.] N?
+gripper_speed: 0.06 # [m/s]
+
+
+# Continuous training
+train_model: false
+train_model_every_number_cycles: 200
+
+
+# Continuous inference
+continuous_inference: false
+show_live_actions: false
+show_live_heatmap: false
+
+
+# Grasping
+grasp_type: "DEFAULT" # DEFAULT, SPECIFIC, TYPE
+check_grasp_second_time: false
+adjust_grasp_second_time: false
+change_bin_at_number_of_failed_grasps: 10 # 10-15 Normal
+release_in_other_bin: true
+release_as_fast_as_possible: false
+random_pose_before_release: true
+max_random_affine_before_release: [0.055, 0.10, 0.0, 1.2, 0.0, 0.0] # [m, rad]
+move_down_distance_for_release: 0.080 # [m]
+measurement_gripper_force: 20.0 # [N], 15
+performance_gripper_force: 40.0 # [N]
+# gripper_classes: [0.025, 0.04, 0.086] # [m]
+gripper_classes: [0.05, 0.07, 0.086] # [m]
+
+
+# Evaluation
+evaluation_result: "/home/berscheid/Documents/data/cylinder-cube-1/evaluation/15-out-of-20.txt"
+change_bin_at_number_of_success_grasps: 15
+number_objects_in_bin: 20
+
+
+# Pushing
+grasp_push_threshold: 0.4
+push_empty_threshold: 0.0 # 0.28
+push_distance: 0.03 # [m] 0.03
+secondary_model: "/home/berscheid/Documents/data/pushing/models/model-1" # Suffix for C++: "-sm"

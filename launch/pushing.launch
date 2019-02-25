@@ -1,0 +1,3 @@
+<launch>
+  <node name="pushing" pkg="bin_picking" type="pushing" output="screen" />
+</launch>
