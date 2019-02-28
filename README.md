@@ -1,6 +1,6 @@
 # Robot Learning of Shifting Objects for Grasping in Cluttered Environments
 
-This repository contains additional information for the submitted paper "Robot Learning of Shifting Objects for Grasping in Cluttered Environments" for IROS 2019. This code lets a robot learn how to grasp objects out of a bin by itself. As traditional approached oftentimes need the 3d model of the object, the robot in this project learns grasping in a self-supervised manner by try and error. Our focus relies on the data-efficiency of the learning process: Currently, it needs around 20000 grasp and around 3000 shift attempts to reliably empty a bin with a grasp rate of over 95%.
+This repository contains additional information for the submitted paper "Robot Learning of Shifting Objects for Grasping in Cluttered Environments" for IROS 2019. This code lets a robot learn how to grasp objects out of a bin by itself. As traditional approached oftentimes need the 3d model of the object, the robot in this project learns grasping in a self-supervised manner by try and error. Our focus relies on the data-efficiency of the learning process: Currently, it needs around 20000 grasp and around 3000 shift attempts to reliably empty a bin with a grasp rate of over 95%. Shifting is essential for bin picking, as it allows the robot to empty a bin completely.
 
 ![database-screenshot](doc/overall-system-wide.jpg?raw=true)
 
