@@ -22,6 +22,13 @@ This project is a ROS package with launch files and a package.xml. The ROS node 
 After installing all dependencies (see next section), run both `roslaunch bin_picking moveit.launch` and `roslaunch bin_picking bin_picking.launch`. For recording, check the database server and the corresponding web interface. 
 
 
+## Object Test Set
+
+
+## Models
+
+TensorFlow models (via the tf.saver API) for both grasping and pushing are in the `models` directory.
+
 
 ## Installation
 
@@ -44,9 +51,3 @@ A database, server and viewer for research around robotic grasping.
 ![database-screenshot](doc/database-screenshot.png?raw=true)
 
 The robot learning database is based on SQLite, Flask, Vue.js. It shows the entire action database as well as live actions. It can also delete recorded actions. The server can be started via `python3 database/app.py`, afterwards open [localhost](127.0.0.1:8080) in your browser.
-
-
-## Object Test Set
-
-
-
