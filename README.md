@@ -22,9 +22,6 @@ This project is a ROS package with launch files and a package.xml. The ROS node 
 After installing all dependencies (see next section), run both `roslaunch bin_picking moveit.launch` and `roslaunch bin_picking bin_picking.launch`. For recording, check the database server and the corresponding web interface. 
 
 
-## Object Test Set
-
-
 ## Models
 
 TensorFlow models (via the tf.saver API) for both grasping and pushing are in the `models` directory.
