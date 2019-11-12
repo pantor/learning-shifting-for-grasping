@@ -17,6 +17,7 @@ The overall structure is as follows:
  - *Database Server* There is a database server for collecting and uploading data and images to another computer. The server has a web interface for showing all actions for all databases in a given server and to show the latest action live. 
  - *Include / Src* The main C++ project for controlling the robot and infer the next best action. It uses the TensorFlow C++ API and MoveIt! for robot control. The camera driver is also included, either via direct access or and optional ensenso node. The latter is helpful because the camera needs a long time to connect and crashes sometimes afterwards.
  - *Scripts* It is recommended to export to PYTHONPATH in `.bashrc`: `export PYTHONPATH=$PYTHONPATH:$HOME/Documents/bin_picking/scripts`
+ - *Jupyter* For neural network definition and training.
 
 This project is a ROS package with launch files and a package.xml. The ROS node /move_group is set to respawn=true. This enables to call rosnode kill /move_group to restart it.
 
@@ -28,7 +29,8 @@ After installing all dependencies (see next section), run both `roslaunch bin_pi
 
 ## Models
 
-TensorFlow models (via the tf.saver API) for both grasping and pushing are in the `models` directory.
+- TensorFlow models (via the tf.saver API) for the seperated grasping and pushing NN are in the `models` directory.
+- CAD models of the 3d-printed robotic gripper and the camera mount are in the `cad-models` directory.
 
 
 ## Installation
