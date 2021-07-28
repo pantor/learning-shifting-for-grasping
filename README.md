@@ -1,8 +1,9 @@
 # Robot Learning of Shifting Objects for Grasping in Cluttered Environments
 
 <p align="center">
- You can find the repository of our <b>newest RA-L and IROS 2020</b> publication <a href="https://github.com/pantor/learning-pick-and-place">here</a>.<br>
- Apart from the more complex pick-and-place application, it also features a new and easier codebase.<br>
+ We've released our easy-to-use Python package <b>Griffig</b>!<br>
+ You can find more information in its <a href="https://github.com/pantor/griffig">repository</a> and on the website <a href="https://griffig.xyz">griffig.xyz</a><br>
+<hr>
 </p>
 
 This repository contains additional information for the paper *Robot Learning of Shifting Objects for Grasping in Cluttered Environments* accepted for IROS 2019 in Macau. This code lets a robot learn how to grasp objects out of a bin by itself. As traditional approached oftentimes need the 3d model of the object, the robot in this project learns grasping in a self-supervised manner by try and error. Our focus relies on the data-efficiency of the learning process: Currently, it needs around 20000 grasp and around 3000 shift attempts to reliably empty a bin with a grasp rate of over 95%. Shifting is essential for bin picking, as it allows the robot to empty a bin completely.
